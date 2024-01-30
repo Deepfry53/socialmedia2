@@ -149,21 +149,21 @@ export const useGetCurrentUser = () => {
       });
     };
 
-    export const useGetPosts = () => {
-      return useInfiniteQuery({
-        queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
-        queryFn: getInfinitePosts,
-        getNextPageParam: (lastPage) => {
+    // export const useGetPosts = () => {
+    //   return useInfiniteQuery({
+    //     queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
+    //     queryFn: getInfinitePosts,
+    //     getNextPageParam: (lastPage) => {
       
-          if (lastPage && lastPage.documents.length === 0) {
-            return null;
-          }
+    //       if (lastPage && lastPage.documents.length === 0) {
+    //         return null;
+    //       }
 
-          const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
-          return lastId;
-        },
-      });
-    };
+    //       const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
+    //       return lastId;
+    //     },
+    //   });
+    // };
 
     export const useSearchPosts = (searchTerm: string) => {
       return useQuery({
